@@ -1,4 +1,7 @@
 <script>
+  // git commit -m ""
+  import Navbar from "./Navbar.svelte";
+
   let name = "John Doe"; //export IF it is passed in by another file
   let points = 100;
   let showControls = true;
@@ -23,6 +26,7 @@
 </style>
 
 <main>
+  <Navbar />
 
   <div class="container">
     <div class="card">
@@ -40,5 +44,4 @@
       {/if}
     </div>
   </div>
-
 </main>
