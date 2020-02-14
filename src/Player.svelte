@@ -1,8 +1,8 @@
 <script>
-  let showControls = true;
+  let showControls = false;
 
-  let name;
-  let points;
+  export let name; //this is exported because props are being passed in for this value
+  export let points; //this is exported because props are being passed in for this value
 
   const addPoint = () => (points += 1); //being passed into the button on:click
   const removePoint = () => (points -= 1); //being passed into the button on:click
