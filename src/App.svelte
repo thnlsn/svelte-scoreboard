@@ -1,23 +1,38 @@
 <script>
   // git commit -m ""
   import Navbar from "./Navbar.svelte";
+  import Player from "./Player.svelte";
 
-  let name = "John Doe"; //export IF it is passed in by another file
-  let points = 100;
-  let showControls = true;
+  let players = [
+    {
+      name: 'Bruce Wayne',
+      points: 82
+    },
+    {
+      name: 'Clark Kent',
+      points: 99
+    },
+    {
+      name: 'Diana Prince',
+      points: 87
+    },
+    {
+      name: 'Barry Allen',
+      points: 71
+    },
+    {
+      name: 'Arthur Curry',
+      points: 58
+    }
+    {
+      name: 'Victor Stone',
+      points: 70
+    }
+  ]
 
-  const consoleLog = value => console.log(value);
-
-  const addPoint = () => (points += 1); //being passed into the button on:click
-  const removePoint = () => (points -= 1); //being passed into the button on:click
-  const toggleControls = () => (showControls = !showControls); //set showControls boolean to whatever it is NOT at the time, so basically just flips it from true/false and vice versa
 </script>
 
 <style>
-  h1 {
-    color: #204f6e;
-  }
-
   @media (min-width: 640px) {
     main {
       max-width: none;
@@ -29,19 +44,13 @@
   <Navbar />
 
   <div class="container">
-    <div class="card">
-      <h1>
-        {name}
-        <button class="btn btn-sm" on:click={toggleControls}>
-          {#if showControls}-{:else}+{/if}
-        </button>
-      </h1>
-      <h3>Points: {points}</h3>
-      {#if showControls}
-        <button class="btn" on:click={addPoint}>+1</button>
-        <button class="btn btn-dark" on:click={removePoint}>-1</button>
-        <input type="number" bind:value={points} />
-      {/if}
-    </div>
+  
+    {#each players as player}
+    <Player name={players.name} points={players.points}/>
+    {/each}
+
+
+
   </div>
+
 </main>
