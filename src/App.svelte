@@ -61,7 +61,7 @@
     <AddPlayer on:addplayer={addPlayer} />
 
     {#if players.length <= 0}
-      <p>No Players</p>
+      <p class="text-center">No Players...</p>
     {:else}
       {#each players as player}
         <Player

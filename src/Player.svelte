@@ -11,8 +11,7 @@
   const addPoint = () => (points += 1); //being passed into the button on:click
   const removePoint = () => (points -= 1); //being passed into the button on:click
   const toggleControls = () => (showControls = !showControls); //set showControls boolean to whatever it is NOT at the time, so basically just flips it from true/false and vice versa
-
-  const removePlayer = e => {
+  const onDelete = e => {
     e.preventDefault();
     dispatch("removeplayer", name);
   };
@@ -31,9 +30,7 @@
       <button class="btn btn-sm" on:click={toggleControls}>
         {#if showControls}-{:else}+{/if}
       </button>
-      <button
-        class="btn btn-sm float-right delete-button"
-        on:click={removePlayer}>
+      <button class="btn btn-sm float-right delete-button" on:click={onDelete}>
         <i class="fas fa-times-circle" />
       </button>
     </h1>
