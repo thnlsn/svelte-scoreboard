@@ -31,7 +31,9 @@
       <button class="btn btn-sm" on:click={toggleControls}>
         {#if showControls}-{:else}+{/if}
       </button>
-      <button class="btn btn-sm float-right" on:click={removePlayer}>
+      <button
+        class="btn btn-sm float-right delete-button"
+        on:click={removePlayer}>
         <i class="fas fa-times-circle" />
       </button>
     </h1>

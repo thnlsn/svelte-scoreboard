@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+.delete-button {
+  background-color: var(--danger-color) !important;
+  color: var(--light-color) !important;
+}
+
 /* Global Styles */
 :root {
   --primary-color: #204f6e;

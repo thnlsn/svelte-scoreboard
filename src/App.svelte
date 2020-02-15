@@ -4,38 +4,36 @@
   import Player from "./Player.svelte";
   import AddPlayer from "./AddPlayer.svelte";
 
-  import players from "./players";
-
-  // let players = [
-  //   {
-  //     name: "Bruce Wayne",
-  //     points: 82
-  //   }
-  //   /*     {
-  //     name: "Clark Kent",
-  //     points: 99
-  //   },
-  //   {
-  //     name: "Diana Prince",
-  //     points: 87
-  //   },
-  //   {
-  //     name: "Barry Allen",
-  //     points: 71
-  //   },
-  //   {
-  //     name: "Arthur Curry",
-  //     points: 58
-  //   },
-  //   {
-  //     name: "Victor Stone",
-  //     points: 70
-  //   },
-  //   {
-  //     name: "John Jones",
-  //     points: 100
-  //   } */
-  // ];
+  let players = [
+    {
+      name: "Bruce Wayne",
+      points: 82
+    },
+    {
+      name: "Clark Kent",
+      points: 99
+    },
+    {
+      name: "Diana Prince",
+      points: 87
+    },
+    {
+      name: "Barry Allen",
+      points: 71
+    },
+    {
+      name: "Arthur Curry",
+      points: 58
+    },
+    {
+      name: "Victor Stone",
+      points: 70
+    },
+    {
+      name: "John Jones",
+      points: 100
+    }
+  ];
 
   const addPlayer = e => {
     const newPlayer = e.detail; // detail is what we dispatched in addplayer
@@ -43,7 +41,6 @@
   };
 
   const removePlayer = e => {
-    console.log(e.detail);
     players = players.filter(player => player.name !== e.detail); // return an array without the player with the name in the detail (aka the player clicked)
   };
 </script>
